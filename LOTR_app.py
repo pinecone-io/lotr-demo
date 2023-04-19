@@ -36,14 +36,14 @@ def LLM_chain_response():
         temperature=0.3,
         openai_api_key=OPENAI_API_KEY,
         model_name="text-davinci-003",
-        max_tokens=512
+        max_tokens=128
     )
 
     chatgpt_chain = LLMChain(
         llm=llm,
         prompt=prompt,
         verbose=True,
-        memory= ConversationSummaryBufferMemory(llm=llm, max_token_limit=768)
+        memory= ConversationSummaryBufferMemory(llm=llm, max_token_limit=256)
     )
     return chatgpt_chain
 
