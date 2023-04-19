@@ -115,7 +115,7 @@ if "past" not in st.session_state:
 
 
 def get_text():
-    input_text = st.text_input("You: ", "What is this book about?", key="input")
+    input_text = st.text_input("You: ", "Why is the ring important in this story?", key="input")
     return input_text
 
 # Main function for the Streamlit app
