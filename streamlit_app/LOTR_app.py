@@ -29,7 +29,7 @@ index = pinecone.Index(index_name)
 def LLM_chain_response():
     prompt = PromptTemplate(
         input_variables=["history", "input"],
-        template="Answer the question based on the context below. If you cannot answer based on the context,truthfully answer that you don't know. Use Markdown, bullets, paragraphs and text formatting to format your answer. \n\nCurrent conversation:\n{history}\nHuman: {input}\nAI:"
+        template="Answer the question based on the context below. If you cannot answer based on the context, you may use general information about the Lord of the Rings Fellowship of the Ring book or movie. Use Markdown and text formatting to format your answer. \n\nCurrent conversation:\n{history}\nHuman: {input}\nAI:"
     )
 
     llm = OpenAI(
