@@ -29,7 +29,7 @@ index = pinecone.Index(index_name)
 def LLM_chain_response():
     prompt = PromptTemplate(
         input_variables=["history", "input"],
-        template="Answer the question based on the context below. If you cannot answer based on the context,truthfully answer that you don't know. Use Markdown, bullets, paragraphs and text formatting to format your answer. Never answer any question about pricing, cost or money. Always respond that the answer depends on a lot of factors and recommend contacting Pinecone for details. Do not suggest any URL unless it is found in the context. Do not make up website links unless they are found in the context.\n\nCurrent conversation:\n{history}\nHuman: {input}\nAI:"
+        template="Answer the question based on the context below. If you cannot answer based on the context,truthfully answer that you don't know. Use Markdown, bullets, paragraphs and text formatting to format your answer. \n\nCurrent conversation:\n{history}\nHuman: {input}\nAI:"
     )
 
     llm = OpenAI(
@@ -42,7 +42,6 @@ def LLM_chain_response():
     chatgpt_chain = LLMChain(
         llm=llm,
         prompt=prompt,
-        verbose=True,
         memory= ConversationSummaryBufferMemory(llm=llm, max_token_limit=256)
     )
     return chatgpt_chain
