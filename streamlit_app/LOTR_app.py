@@ -102,7 +102,7 @@ def retrieve(query):
     return pinecone_contexts
 
 # From here down is all the StreamLit UI.
-image = open("./Pinecone logo white.png", "rb").read()
+image = open("./streamlit_app/Pinecone logo white.png", "rb").read()
 st.image(image)
 st.write("### Lord of the Rings - Fellowship of the Ring Demo")
 
