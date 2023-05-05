@@ -6,7 +6,7 @@ Under the setup folder:
 1. pip install -r ./setup/requirements.txt
 2. copy .env_sample to .env
 3. Update .env file with API keys
-4. Run the notebook to load the data into the Pinecone index
+4. Run the notebook to load the data into the Pinecone index  
 5. Deploy the Streamlit app 
 
 ---  
